@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Ваши мета-теги и ссылки на стили CSS -->
+  <!-- ... -->
+</head>
+<body>
+<div class="container">
+  <h1>Редактировать товар</h1>
+  <form method="post" th:action="@{/edit/{id}(id=${product.id})}">
+    <div class="form-group">
+      <label for="productName">Наименование:</label>
+      <input type="text" class="form-control" id="productName" name="productName" th:value="${product.productName}" required>
+    </div>
+    <div class="form-group">
+      <label for="coast">Стоимость:</label>
+      <input type="text" class="form-control" id="coast" name="coast" th:value="${product.coast}" required>
+    </div>
+    <div class="form-group">
+      <label for="photoUrl">URL фото:</label>
+      <input type="text" class="form-control" id="photoUrl" name="photoUrl" th:value="${product.photoUrl}" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Описание:</label>
+      <input type="text" class="form-control" id="description" name="description" th:value="${product.description}" required>
+    </div>
+    <div class="form-group">
+      <label for="weight">Вес (в граммах):</label>
+      <input type="text" class="form-control" id="weight" name="weight" th:value="${product.weight}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+  </form>
+</div>
+</body>
+</html>
